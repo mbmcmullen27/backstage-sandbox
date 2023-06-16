@@ -1,0 +1,3 @@
+id_rsa
+terraform-resources/terraform.tfstate
+terraform-resources/.terraform*
