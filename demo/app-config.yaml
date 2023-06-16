@@ -73,7 +73,7 @@ auth:
   providers:
     github:
       development:
-        clientId: ${AUTH_GITHUB_CLIENT_ID}
+        clientId: 28ae6d68aeb0ea8368b3
         clientSecret: ${AUTH_GITHUB_CLIENT_SECRET}
 
 scaffolder:

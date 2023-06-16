@@ -14,7 +14,7 @@
     ```
     sudo apt-get install postgresql
     sudo -u postgres psql
-    
+
     postgres=# ALTER USER postgres PASSWORD 'secret';
     ```
 
@@ -35,3 +35,13 @@
     ```
     ssh -i id_rsa azureuser@23.96.124.95
     ```
+
+1. install nvm & node & yarn
+    ```
+    sudo apt install curl 
+    curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
+    source ~/.bashrc   
+    nvm install 18
+    npm install --global yarn
+    ```
+
