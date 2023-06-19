@@ -71,10 +71,11 @@ auth:
   # see https://backstage.io/docs/auth/ to learn about auth providers
   environment: development
   providers:
-    github:
+    microsoft:
       development:
-        clientId: 28ae6d68aeb0ea8368b3
-        clientSecret: ${AUTH_GITHUB_CLIENT_SECRET}
+        clientId: ${AZURE_ID}
+        clientSecret: ${AZURE_SECRET}
+        tenantId: ${AZURE_TENANT}
 
 scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
