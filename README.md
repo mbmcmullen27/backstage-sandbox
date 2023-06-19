@@ -18,7 +18,13 @@
     postgres=# ALTER USER postgres PASSWORD 'secret';
     ```
 
-
+## ADO
+{README](https://github.com/backstage/backstage/tree/master/plugins/azure-devops-backend)
+    ```
+    yarn add --cwd packages/backend @backstage/plugin-catalog-backend-module-azure
+    yarn add --cwd packages/backend @backstage/plugin-azure-devops-backend
+    yarn add --cwd packages/app @backstage/plugin-azure-devops
+    ```
 
 ## Azure VM
 1. get private key

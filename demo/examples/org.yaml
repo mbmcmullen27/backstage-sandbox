@@ -3,9 +3,12 @@
 apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
-  name: guest
+  name: mmcmullen
 spec:
   memberOf: [guests]
+  profile:
+    displayName: MEGA USER
+    email: mmcmullen@boxboat.com
 ---
 # https://backstage.io/docs/features/software-catalog/descriptor-format#kind-group
 apiVersion: backstage.io/v1alpha1

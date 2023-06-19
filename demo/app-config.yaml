@@ -38,16 +38,19 @@ backend:
     store: memory
   # workingDirectory: /tmp # Use this to configure a working directory for the scaffolder, defaults to the OS temp-dir
 
-integrations:
-  github:
-    - host: github.com
-      # This is a Personal Access Token or PAT from GitHub. You can find out how to generate this token, and more information
-      # about setting up the GitHub integration here: https://backstage.io/docs/getting-started/configuration#setting-up-a-github-integration
-      token: ${GITHUB_TOKEN}
+  integrations:
+    azure:
+      - host: dev.azure.com
+        token: ${AZURE_TOKEN}
     ### Example for how to add your GitHub Enterprise instance using the API:
     # - host: ghe.example.net
     #   apiBaseUrl: https://ghe.example.net/api/v3
     #   token: ${GHE_TOKEN}
+
+azureDevOps:
+  host: dev.azure.com
+  token: ${AZURE_TOKEN}
+  organization: my-company
 
 proxy:
   ### Example for how to add a proxy endpoint for the frontend.
@@ -71,15 +74,27 @@ auth:
   # see https://backstage.io/docs/auth/ to learn about auth providers
   environment: development
   providers:
-    github:
+    microsoft:
       development:
-        clientId: 28ae6d68aeb0ea8368b3
-        clientSecret: ${AUTH_GITHUB_CLIENT_SECRET}
+        clientId: ${AZURE_ID}
+        clientSecret: ${AZURE_SECRET}
+        tenantId: ${AZURE_TENANT}
 
 scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
 
 catalog:
+  providers:
+    azureDevOps:
+      yourProviderId: # identifies your dataset / provider independent of config changes
+        organization: boxboat
+        project: demos
+        path: /catalog-info.yaml
+        schedule: # optional; same options as in TaskScheduleDefinition
+          # supports cron, ISO duration, "human duration" as used in code
+          frequency: { minutes: 30 }
+          # supports ISO duration, "human duration" as used in code
+          timeout: { minutes: 3 }
   import:
     entityFilename: catalog-info.yaml
     pullRequestBranchName: backstage-integration
